@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -22,27 +24,33 @@
 </div>
 
 <div id = "container">
-    <div id="content">
-        <form:form action="checkUser"  method="POST">
-            <table>
+    <form:form action="checkUser"  modelAttribute="checkUser" method="POST">
+        <table>
 
-                <tr>
-                    <td><label>Login ID</label></td>
-                    <td> <input type="text"  name="login_id" /></td>
-                </tr>
-                <tr>
-                    <td><label>Password</label></td>
-                    <td> <input type="password" name="pass_word"/></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Login"  class="save "/>
-                    </td>
-                </tr>
-            </table>
-        </form:form>
+            <tr>
+                <td><label>Login ID</label></td>
+                <td> <form:input path="loginId" /></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td> <form:input path="password" /></td>
+            </tr>
+            <tr>
+
+                <td> <form:input type = "hidden" path="firstName" /></td>
+            </tr>
+            <tr>
+                <td> <form:input type = "hidden" path="emailId" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login"  class="save ">
+                </td>
+            </tr>
+
+        </table>
+    </form:form>
         <input type="button" value="SignUp" onclick="window.location.href='adduser'; return false ;" class="add-button">
-    </div>
 </div>
 </body>
 </html>

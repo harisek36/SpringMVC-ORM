@@ -27,7 +27,14 @@ public class UserDAOClass implements UserDAO {
          entityManager.persist(user);
     }
 
-    public void getUser(String login, String password) {
+    public boolean getUser(String login, String password) {
 
+        User checkUser = entityManager.find(User.class,login);
+
+        if (checkUser != null  &&  checkUser.getPassword() == password){
+            return true;
+        }
+        return false;
     }
 }
+

@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserDAO  {
     public List<User> getCustomers();
     public void saveUser(User user);
-    public void getUser(String loginID, String password);
+    public boolean getUser(String loginID, String password);
 
 
 }
