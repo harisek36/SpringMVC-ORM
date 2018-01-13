@@ -23,8 +23,9 @@ public class UserServiceClass implements UserService {
         return null;
     }
 
-    public String addUser(User user) {
-        return null;
+    @Transactional
+    public void saveUser(User user) {
+        userDAO.saveUser(user);
     }
 
     public String deleteUser(String id) {

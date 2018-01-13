@@ -21,4 +21,9 @@ public class UserDAOClass implements UserDAO {
         TypedQuery<User> query = entityManager.createNamedQuery("Users.findAll",User.class);
         return query.getResultList();
     }
+
+    public void saveUser(User user) {
+         System.out.println(user.toString());
+         entityManager.persist(user);
+    }
 }

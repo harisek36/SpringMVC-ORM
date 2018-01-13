@@ -10,6 +10,8 @@
 <head>
     <title>Added User List</title>
     <link href="<c:url value="/Resources/CSS/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/Resources/CSS/add-user-style.css" />" rel="stylesheet">
+
 </head>
 <body>
 <div id="wrapper">
@@ -37,6 +39,10 @@
                 </tr>
             </c:forEach>
         </table>
+        <br>
+        <br>
+        <input type="submit" value="Home" onclick="window.location.href='home'; return false ;" class="save ">
+
     </div>
 </div>
 </body>
