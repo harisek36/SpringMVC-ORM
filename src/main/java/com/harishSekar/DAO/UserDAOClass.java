@@ -16,7 +16,7 @@ public class UserDAOClass implements UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Transactional
+
     public List<User> getCustomers() {
         TypedQuery<User> query = entityManager.createNamedQuery("Users.findAll",User.class);
         return query.getResultList();

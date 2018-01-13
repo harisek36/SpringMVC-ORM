@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import java.util.UUID;
 
 @Entity
 @NamedQueries({@NamedQuery(name = "Users.findAll",query = "SELECT users FROM User users")})
@@ -11,17 +12,21 @@ import javax.persistence.NamedQuery;
 public class User {
 
     @Id
-    private int id;
+    private String id;
     private String loginId;
     private String FirstName;
     private String password;
     private String emailId;
 
-    public int getId() {
+    public User() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
