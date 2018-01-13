@@ -26,4 +26,8 @@ public class UserDAOClass implements UserDAO {
          System.out.println(user.toString());
          entityManager.persist(user);
     }
+
+    public void getUser(String login, String password) {
+
+    }
 }

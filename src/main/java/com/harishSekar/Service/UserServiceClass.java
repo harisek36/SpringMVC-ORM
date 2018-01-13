@@ -19,8 +19,9 @@ public class UserServiceClass implements UserService {
         return userDAO.getCustomers();
     }
 
-    public User getUser(String id) {
-        return null;
+    public boolean getUser(String loginID,String password) {
+
+        return true;
     }
 
     @Transactional

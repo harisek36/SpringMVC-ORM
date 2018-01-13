@@ -10,6 +10,8 @@
 <head>
     <title>Title</title>
     <link href="<c:url value="/Resources/CSS/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/Resources/CSS/add-user-style.css" />" rel="stylesheet">
+
 
 </head>
 <body>
@@ -21,13 +23,24 @@
 
 <div id = "container">
     <div id="content">
-        <form>
+        <form:form action="checkUser"  method="POST">
+            <table>
 
-            <input type="text" name="userID" placeholder="user ID"><br>
-
-            <input type="password" name="password" placeholder="password">
-        </form>
-        <input type="button" value="login" onclick="window.location.href='userlist'; return false ;" class="add-button">
+                <tr>
+                    <td><label>Login ID</label></td>
+                    <td> <input type="text"  name="login_id" /></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td> <input type="password" name="pass_word"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Login"  class="save "/>
+                    </td>
+                </tr>
+            </table>
+        </form:form>
         <input type="button" value="SignUp" onclick="window.location.href='adduser'; return false ;" class="add-button">
     </div>
 </div>
