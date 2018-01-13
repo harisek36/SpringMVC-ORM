@@ -13,16 +13,12 @@ import java.util.List;
 @Repository
 public class UserDAOClass implements UserDAO {
 
-    @Autowired
-    private UserDAO userDAO;
-
-
     @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional
     public List<User> getCustomers() {
-        TypedQuery<User> query = entityManager.createQuery("Users.findAll",User.class);
+        TypedQuery<User> query = entityManager.createNamedQuery("Users.findAll",User.class);
         return query.getResultList();
     }
 }
