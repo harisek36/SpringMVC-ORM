@@ -24,27 +24,31 @@
 </div>
 
 <div id = "container">
-    <form:form action="checkUser"  modelAttribute="checkUser" method="POST">
+    <form:form action="checkUser" onsubmit="validateForm()"  modelAttribute="checkUser" method="POST">
         <table>
 
             <tr>
                 <td><label>Login ID</label></td>
-                <td> <form:input path="loginId" /></td>
+                <td> <form:input id="homeLogin" path="loginId" type="text"/></td>
             </tr>
+
             <tr>
                 <td><label>Password</label></td>
-                <td> <form:input path="password" /></td>
+                <td> <form:input id="homePassword" path="password" type="password" /></td>
             </tr>
+
             <tr>
 
                 <td> <form:input type = "hidden" path="firstName" /></td>
             </tr>
+
             <tr>
                 <td> <form:input type = "hidden" path="emailId" /></td>
             </tr>
+
             <tr>
                 <td>
-                    <input type="submit" value="Login"  class="save ">
+                    <input type="submit"  value="Login"  class="save ">
                 </td>
             </tr>
 
@@ -52,5 +56,15 @@
     </form:form>
         <input type="button" value="SignUp" onclick="window.location.href='adduser'; return false ;" class="add-button">
 </div>
+
+<script>
+    function validateForm() {
+        var x = document.getElementById("homeLogin");
+        if (x == "") {
+            alert("Login Must must be filled out");
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

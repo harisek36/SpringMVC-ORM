@@ -26,11 +26,9 @@ public class HomeSignIn {
     @PostMapping(value = "/checkUser")
     public String checkUserLogin(@ModelAttribute("checkUser") User checkUser){
 
-        checkUser.setFirstName("");
-        checkUser.setEmailId("");
         System.out.println(checkUser.toString());
         if(userService.getUser(checkUser.getLoginId(),checkUser.getPassword()))
-            return "userlist";
+            return "redirect:/userlist";
         else
             return "UserNotFound";
 

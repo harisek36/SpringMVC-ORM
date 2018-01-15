@@ -1,13 +1,12 @@
 package com.harishSekar.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@NamedQueries({@NamedQuery(name = "Users.findAll",query = "SELECT users FROM User users")})
+@NamedQueries({@NamedQuery(name = "Users.findAll",query = "SELECT users FROM User users"),
+        @NamedQuery(name = "Users.findbyLoginID",
+                query = "Select users from User users where users.loginId=:loginId and users.password=:password")})
 
 public class User {
 

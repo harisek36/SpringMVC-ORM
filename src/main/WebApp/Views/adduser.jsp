@@ -13,7 +13,6 @@
     <link href="<c:url value="/Resources/CSS/style.css" />" rel="stylesheet">
     <link href="<c:url value="/Resources/CSS/add-user-style.css" />" rel="stylesheet">
 
-
 </head>
 <body>
 <div id="wrapper">
@@ -29,19 +28,19 @@
 
             <tr>
                 <td><label>Name</label></td>
-                <td> <form:input path="firstName" /></td>
+                <td> <form:input path="firstName"  type="text" /></td>
             </tr>
             <tr>
                 <td><label>Email ID</label></td>
-                <td> <form:input path="emailId" /></td>
+                <td> <form:input path="emailId" type="text" /></td>
             </tr>
              <tr>
                 <td><label>Login ID</label></td>
-                <td> <form:input path="loginId" /></td>
+                <td> <form:input path="loginId" type="text" /></td>
              </tr>
              <tr>
                 <td><label>Password</label></td>
-                <td> <form:input path="password" /></td>
+                <td> <form:input path="password"  type="password"/></td>
             </tr>
             <tr>
                 <td>
